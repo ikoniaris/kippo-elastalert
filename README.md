@@ -1,0 +1,1 @@
+# kippo-elastalert
