@@ -1,0 +1,24 @@
+es_host: localhost
+es_port: 9200
+index: kippo
+
+name: "Kippo SSH attempt"
+timestamp_field: "timestamp"
+
+type: any
+filter:
+  - term:
+      log_type: login_attempt
+realert:
+  minutes: 0
+
+include:
+  - "username"
+  - "password"
+  - "ip"
+  - "country"
+  - "client"
+
+alert_text: "An ssh login was attempted."
+alert:
+- debug
